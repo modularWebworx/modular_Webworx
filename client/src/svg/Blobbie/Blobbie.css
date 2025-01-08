@@ -1,0 +1,23 @@
+.interactive-blob {
+    filter: url(#goo);
+    animation: ripple-pulse 4s ease-out infinite, slow-spin .5s ease-in-out infinite;
+  }
+  
+  @keyframes ripple-pulse {
+    0% {
+      transform: scale(1) skew(0deg, 0deg);
+    }
+    25% {
+      transform: scale(1.1) skew(2deg, -2deg);
+    }
+    50% {
+      transform: scale(0.95) skew(-5deg, 5deg);
+    }
+    75% {
+      transform: scale(1.05) skew(1deg, -1deg);
+    }
+    100% {
+      transform: scale(1) skew(-3deg, -3deg);
+    }
+  }
+  

@@ -1,0 +1,18 @@
+.svg-logo {
+    width: 40px;
+    height: 40px;
+    animation: moveLogo 10s infinite alternate ease-in-out;
+  }
+  
+  @keyframes moveLogo {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    50% {
+      transform: translate(5px, -5px) scale(1.05);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+  

@@ -1,0 +1,12 @@
+@keyframes slow-spin {
+  from {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(190deg);
+  }
+}
+
+.animate-slow-spin {
+  animation: slow-spin 29s linear infinite;
+}
