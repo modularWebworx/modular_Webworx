@@ -128,7 +128,7 @@ function Home() {
             <div className="white-stripe"></div>
 
             <p className="text-3xl md:text-4xl text-gray-300 mt-4">
-              Empowering Your Digital Presence
+              Empowering Your Digital Presence.
             </p>
 
             <p className="text-l md:text-2xl text-gray-300 mt-4">
