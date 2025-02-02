@@ -20,7 +20,6 @@ jobs:
 
       - name: Deploy changes
         run: |
-          # Disable strict host key checking to avoid "host key verification" prompts
           ssh -o StrictHostKeyChecking=no deployer@66.179.190.150 <<EOF
           cd /home/deployer/modularWebworx/modular_Webworx
           git pull origin main
@@ -35,6 +34,6 @@ jobs:
           npm install
           npm run build
 
-          # Restart Nginx
+          # Restart Nginx (passwordless sudo required)
           sudo systemctl restart nginx
           EOF
