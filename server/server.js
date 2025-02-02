@@ -1,21 +1,24 @@
-const express = require('express');
-const routes = require('./routes/routes');
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const helmet = require("helmet");
+const morgan = require("morgan");
+const connectDB = require("./config/db");
+
 const app = express();
-const cors = require('cors')
 
-const PORT = process.env.PORT || 4000;
+// Connect to database
+connectDB();
 
-require("./config/db_connection");
-
-app.use(cors())
-
-app.use(express.urlencoded({ extended: true }));
+// Middleware
 app.use(express.json());
+app.use(cors());
+app.use(helmet());
+app.use(morgan("dev"));
 
-routes(app);
+// Routes
+app.get("/", (req, res) => res.send("API is running"));
 
-app.listen(PORT, () => {
-  console.log(`Server up and running on http://localhost:${PORT}`)
-});
-
-module.exports = app;
+// Start server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
