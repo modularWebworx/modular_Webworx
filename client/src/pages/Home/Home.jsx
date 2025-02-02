@@ -117,12 +117,12 @@ function Home() {
         {/* HERO SECTION */}
         <section className="hero-section flex items-center justify-center relative w-full min-h-screen  pt-16">
           <div className="absolute top-10 inset-x-0 flex items-center justify-center">
-            {/* <Blob className="w-screen h-screen animate-spin-scale" /> */}
+            <Blob className="w-screen h-screen animate-spin-scale" />
           </div>
 
           <div className="hero-content relative z-10 text-center px-4">
             <h1 className="text-5xl md:text-8xl font-extrabold text-white">
-              <span className="md:text-7xl font-extrabold text-white italic">Modular</span>WebWorx
+              <span className="md:text-7xl font-extrabold text-white italic">Misty</span>WebWorx
             </h1>
 
             <div className="white-stripe"></div>
