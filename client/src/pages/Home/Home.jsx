@@ -122,7 +122,7 @@ function Home() {
 
           <div className="hero-content relative z-10 text-center px-4">
             <h1 className="text-5xl md:text-8xl font-extrabold text-white">
-              <span className="md:text-7xl font-extrabold text-white italic">Misty</span>WebWorx
+              <span className="md:text-7xl font-extrabold text-white italic">Modular</span>WebWorx
             </h1>
 
             <div className="white-stripe"></div>
