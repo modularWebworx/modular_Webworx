@@ -10,23 +10,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: SSH into server & deploy
-        uses: appleboy/ssh-action@v0.1.10
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.3
         with:
-          host: ${{ secrets.SERVER_IP }}
-          username: deployer
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd /home/deployer/modularWebworx/modular_Webworx
-            git pull origin main
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-            # Deploy backend
-            cd server
-            npm install
-            pm2 restart all
+      - name: Deploy changes
+        run: |
+          # Disable strict host key checking to avoid "host key verification" prompts
+          ssh -o StrictHostKeyChecking=no deployer@66.179.190.150 <<EOF
+          cd /home/deployer/modularWebworx/modular_Webworx
+          git pull origin main
 
-            # Deploy frontend
-            cd ../client
-            npm install
-            npm run build
-            sudo systemctl restart nginx
+          # Deploy backend
+          cd server
+          npm install
+          pm2 restart all
+
+          # Deploy frontend
+          cd ../client
+          npm install
+          npm run build
+
+          # Restart Nginx
+          sudo systemctl restart nginx
+          EOF
