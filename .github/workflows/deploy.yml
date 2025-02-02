@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Debug Environment  # ✅ Moved outside and correctly formatted
+        run: echo "Server IP is: ${{ secrets.SERVER_IP }}"
+
       - name: SSH into server & deploy
         uses: appleboy/ssh-action@v0.1.10
         with:
@@ -19,16 +22,12 @@ jobs:
           script: |
             cd /home/deployer/modularWebworx/modular_Webworx
             git pull origin main
-
             # Deploy backend
             cd server
             npm install
             pm2 restart all
-
             # Deploy frontend
             cd ../client
             npm install
             npm run build
             sudo systemctl restart nginx
-        - name: Debug Environment
-          run: echo "Server IP is: ${{ secrets.SERVER_IP }}"
