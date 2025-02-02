@@ -10,9 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Debug Environment
-        run: echo "Server IP is: ${{ secrets.SERVER_IP }}"
-
       - name: SSH into server & deploy
         uses: appleboy/ssh-action@v0.1.10
         with:
