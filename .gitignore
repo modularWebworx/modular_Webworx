@@ -139,3 +139,4 @@ venv/
 # Temporary and backup files
 *.sw?
 *~
+.DS_Store
