@@ -10,7 +10,6 @@ function AboutUs() {
 
 export default AboutUs;
 
-// import React from 'react';
 
 // import heroBackground from '../assets/hero-background.jpg';
 // import missionIcon from '../assets/mission-icon.png';
