@@ -21,7 +21,7 @@ jobs:
       - name: Deploy changes
         run: |
           ssh -o StrictHostKeyChecking=no deployer@66.179.190.150 <<EOF
-          cd /home/deployer/modularWebworx/modular_Webworx
+          cd /home/deployer/modularWebworx
           git pull origin main
 
           # Deploy backend
