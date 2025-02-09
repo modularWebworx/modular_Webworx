@@ -1,6 +1,4 @@
-// Home.jsx
 import React, { useState, useEffect } from "react";
-import Blob from "../../svg/Blobbie/Blobbie";
 import Navbar from "../../components/Navbar/Navbar";
 
 function Home() {
@@ -38,7 +36,7 @@ function Home() {
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      // TODO:API call)
+      // TODO:API call
       console.log("Form Data Submitted:", formData);
       setFormData({ name: "", email: "", message: "" });
       closeModal();
@@ -115,11 +113,7 @@ function Home() {
       <Navbar />
       <main className="flex flex-col items-center justify-center min-h-screen">
         {/* HERO SECTION */}
-        <section className="hero-section flex items-center justify-center relative w-full min-h-screen  pt-16">
-          <div className="absolute top-10 inset-x-0 flex items-center justify-center">
-            <Blob className="w-screen h-screen animate-spin-scale" />
-          </div>
-
+        <section className="hero-section flex items-center justify-center relative w-full min-h-screen pt-16">
           <div className="hero-content relative z-10 text-center px-4">
             <h1 className="text-5xl md:text-8xl font-extrabold text-white">
               <span className="md:text-7xl font-extrabold text-white italic">Modular</span>WebWorx
@@ -140,7 +134,6 @@ function Home() {
             >
               Get Started
             </button>
-
           </div>
         </section>
 
@@ -189,7 +182,6 @@ function Home() {
           >
             Get Started
           </button>
-
         </section>
 
         {/* CONTACT SECTION */}
